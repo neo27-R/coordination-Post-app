@@ -13,3 +13,89 @@
  *= require_tree .
  *= require_self
  */
+
+/* ===== Top Page ===== */
+.top {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    color: #111827;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+  }
+  
+  .top__inner {
+    max-width: 720px;
+    padding: 24px;
+    text-align: center;
+  }
+  
+
+  .service-name {
+    font-size: 56px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    margin: 0;
+    color: #6b6b6b;
+  }
+
+  .top__title {
+    font-size: 35px;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.03em;
+    margin-bottom: 16px;
+  }
+  
+  .top__description {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #4b5563;
+    margin-bottom: 32px;
+  }
+  
+  .top__actions {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+  }
+  
+  /* Buttons */
+  .btn {
+    padding: 12px 20px;
+    border-radius: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-block;
+  }
+  
+  .btn--login {
+    background: #ffffff;
+    color: #111827;
+    border: 1px solid #d1d5db;
+  }
+  
+  .btn--login:hover {
+    background: #f9fafb;
+  }
+  
+  .btn--signup {
+    background: #111827;
+    color: #ffffff;
+  }
+  
+  .btn--signup:hover {
+    opacity: 0.9;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .top__title {
+      font-size: 32px;
+    }
+  
+    .top__actions {
+      flex-direction: column;
+    }
+  }
