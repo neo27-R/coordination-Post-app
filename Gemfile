@@ -57,3 +57,5 @@ group :test do
   gem "selenium-webdriver"
   gem "minitest", "< 6"
 end
+
+gem "sorcery", "~> 0.17.0"
