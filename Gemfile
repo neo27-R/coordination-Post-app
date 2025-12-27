@@ -58,4 +58,4 @@ group :test do
   gem "minitest", "< 6"
 end
 
-gem 'sorcery', '0.16.3'
+gem "sorcery", "~> 0.17.0"
