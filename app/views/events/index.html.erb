@@ -1,7 +1,24 @@
-<h1>イベント投稿一覧</h1>
-
-<% @events.each do |event| %>
-  <div>
-    <%= event.title %>
+<div class="container py-4">
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h1 class="h3 mb-0">イベント一覧</h1>
+    <%= link_to "イベントを作成", new_event_path, class: "btn btn-primary" %>
   </div>
-<% end %>
+
+  <% if @events.any? %>
+    <div class="list-group">
+      <% @events.each do |event| %>
+        <%= link_to event_path(event), class: "list-group-item list-group-item-action" do %>
+          <div class="d-flex w-100 justify-content-between">
+            <h2 class="h5 mb-1"><%= event.title %></h2>
+            <small><%= l(event.created_at, format: :short) %></small>
+          </div>
+          <% if event.respond_to?(:description) && event.description.present? %>
+            <p class="mb-1"><%= truncate(event.description, length: 80) %></p>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
+  <% else %>
+    <p class="text-muted">まだイベントがありません。</p>
+  <% end %>
+</div>

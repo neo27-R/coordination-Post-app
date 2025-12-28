@@ -15,6 +15,12 @@
  *= require auth_only
  */
 
+ html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
 /* ===== Top Page ===== */
 .top {
     min-height: 100vh;
@@ -99,4 +105,63 @@
     .top__actions {
       flex-direction: column;
     }
+  }
+
+  /* ヘッダー全体 */
+  .site-header {
+    width: 100%;
+    height: 64px;
+    background: #E8F3EC; /* やさしい緑 */
+    border-bottom: 1px solid #D6E7DD;
+  }
+
+  /* 中身 */
+  .site-header__inner {
+    max-width: 1400px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 px;
+  
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  /* ロゴ */
+  .site-header__brand {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #2F5D50;
+  }
+  
+  /* ナビ */
+  .site-header__nav {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+  
+  /* link_to 用 */
+  .site-header__link {
+    font-size: 14px;
+    font-weight: 500;
+    color: #355F54;
+    text-decoration: none;
+  }
+  
+  /* button_to が生成する form のズレ対策 */
+  .site-header__nav form {
+    margin: 0;
+  }
+  
+  /* ログアウトボタン */
+  .site-header__btn {
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: 14px;
+    font-weight: 500;
+    color: #355F54;
+    cursor: pointer;
   }

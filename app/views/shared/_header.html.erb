@@ -1,18 +1,12 @@
-<nav class="navbar navbar-expand soft-green mb-3">
-  <div class="container">
-    <%= link_to "maeFUKU", root_path, class: "navbar-brand" %>
+<header class="site-header">
+  <div class="site-header__inner">
+    <div class="site-header__brand">maeFUKU</div>
 
-    <div class="ms-auto d-flex align-items-center gap-3">
+    <nav class="site-header__nav">
       <% if logged_in? %>
-        <%= link_to "イベント投稿一覧", events_path, class: "nav-link" %>
-
-        <%= link_to "ログアウト",
-                    logout_path,
-                    data: { turbo_method: :delete, turbo_confirm: "ログアウトしますか？" },
-                    class: "nav-link" %>
-      <% else %>
-        <%= link_to "ログイン", login_path, class: "nav-link" %>
+        <%= link_to "イベント一覧", events_path, class: "site-header__link" %>
+        <%= button_to "ログアウト", logout_path, method: :delete, class: "site-header__link site-header__btn" %>
       <% end %>
-    </div>
+    </nav>
   </div>
-</nav>
+</header>
