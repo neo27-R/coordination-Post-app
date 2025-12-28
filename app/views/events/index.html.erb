@@ -1,24 +1,20 @@
-<div class="container py-4">
-  <div class="d-flex justify-content-between align-items-center mb-3">
-    <h1 class="h3 mb-0">イベント一覧</h1>
-    <%= link_to "イベントを作成", new_event_path, class: "btn btn-primary" %>
+<div class="events-index">
+  <div class="events-index__header">
+    <h1 class="events-index__title">イベント投稿一覧</h1>
+
+    <div class="events-index__actions">
+      <%= link_to "イベント作成", new_event_path, class: "events-index__btn events-index__btn--primary" %>
+
+      <%# 「イベント参加」用のURLがまだなら一旦 # にしてOK %>
+      <%= link_to "イベント参加", "#", class: "events-index__btn events-index__btn--secondary" %>
+    </div>
   </div>
 
-  <% if @events.any? %>
-    <div class="list-group">
-      <% @events.each do |event| %>
-        <%= link_to event_path(event), class: "list-group-item list-group-item-action" do %>
-          <div class="d-flex w-100 justify-content-between">
-            <h2 class="h5 mb-1"><%= event.title %></h2>
-            <small><%= l(event.created_at, format: :short) %></small>
-          </div>
-          <% if event.respond_to?(:description) && event.description.present? %>
-            <p class="mb-1"><%= truncate(event.description, length: 80) %></p>
-          <% end %>
-        <% end %>
-      <% end %>
-    </div>
-  <% else %>
-    <p class="text-muted">まだイベントがありません。</p>
-  <% end %>
+  <div class="events-grid">
+    <% if @events.present? %>
+      <%= render @events %>
+    <% else %>
+      <div class="events-empty">イベントがありません</div>
+    <% end %>
+  </div>
 </div>

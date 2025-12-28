@@ -1,0 +1,209 @@
+.events-index {
+    padding: 24px 24px 40px;
+  }
+  
+  .events-index__header {
+    position: relative;
+    min-height: 72px;
+    margin-bottom: 24px;
+  }
+  
+  .events-index__title {
+    margin: 0;
+    text-align: center;
+    font-size: 44px;
+    font-weight: 700;
+    letter-spacing: 2px;
+  }
+  
+  .events-index__actions {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .events-index__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 160px;
+    height: 44px;
+    text-decoration: none;
+    font-weight: 700;
+    border: 1px solid #111;
+  }
+  
+  .events-index__btn--primary {
+    background: #111;
+    color: #fff;
+  }
+  
+  .events-index__btn--secondary {
+    background: #d9d9d9;
+    color: #111;
+    border-color: #d9d9d9;
+  }
+  
+  .events-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(260px, 1fr));
+    gap: 32px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  .event-card {
+    border: 1px solid #666;
+    background: #fff;
+  }
+  
+  .event-card__header {
+    height: 34px;
+    background: #d9d9d9;
+    border-bottom: 1px solid #666;
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    font-weight: 700;
+    font-size: 14px;
+  }
+  
+  .event-card__body {
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+  }
+  
+  .event-card__content {
+    text-align: center;
+    font-size: 16px;
+  }
+  
+  .events-empty {
+    text-align: center;
+    padding: 24px 0;
+    color: #666;
+  }
+  
+  /* スマホは1列 */
+  @media (max-width: 768px) {
+    .events-index__actions {
+      position: static;
+      margin-top: 12px;
+      align-items: flex-end;
+    }
+  
+    .events-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .events-index__title {
+      font-size: 34px;
+    }
+  }
+
+  /* =========================
+   イベント作成画面（new）
+   ========================= */
+   .event-new {
+    min-height: 100vh;
+    padding: 56px 16px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .event-new__title {
+    margin: 0 0 32px;
+    font-size: 44px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-align: center;
+  }
+  
+  .event-new__card {
+    width: 100%;
+    max-width: 560px;
+    border: 1px solid #111;
+    padding: 28px 26px;
+    background: #fff;
+  }
+  
+  .event-form__field {
+    margin-bottom: 18px;
+  }
+  
+  .event-form__label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+  
+  .event-form__input,
+  .event-form__textarea {
+    width: 100%;
+    border: 1px solid #111;
+    padding: 12px 12px;
+    font-size: 16px;
+    background: #fff;
+    box-sizing: border-box;
+  }
+  
+  .event-form__textarea {
+    resize: vertical;
+  }
+  
+  .event-form__actions {
+    margin-top: 22px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .event-form__submit {
+    width: 220px;
+    height: 48px;
+    border: 1px solid #111;
+    background: #111;
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: 2px;
+    cursor: pointer;
+  }
+  
+  .event-form__submit:hover {
+    opacity: 0.9;
+  }
+  
+  .event-form__errors {
+    border: 1px solid #111;
+    background: #f6f6f6;
+    padding: 12px 14px;
+    margin-bottom: 18px;
+  }
+  
+  .event-form__errors ul {
+    margin: 0;
+    padding-left: 18px;
+  }
+  
+  /* スマホ */
+  @media (max-width: 768px) {
+    .event-new__title {
+      font-size: 34px;
+    }
+  
+    .event-new__card {
+      padding: 22px 18px;
+    }
+  
+    .event-form__submit {
+      width: 100%;
+    }
+  }
