@@ -18,6 +18,16 @@
   </head>
 
   <body>
-    <%= yield %>
+    <% unless %w[home user_sessions users].include?(controller_name) %>
+      <%= render "shared/header" %>
+    <% end %>
+
+    <main class="site-main">
+      <%= yield %>
+    </main>
+
+    <% unless %w[home user_sessions users].include?(controller_name) %>
+      <%= render "shared/footer" %>
+    <% end %>
   </body>
 </html>
