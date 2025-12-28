@@ -1,0 +1,69 @@
+.auth-only {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 80px;
+    background: #fff;
+  }
+  
+  .auth-only__title {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 32px;
+    letter-spacing: 6px;
+  }
+  
+  .auth-only__form {
+    width: 100%;
+    max-width: 520px;
+    display: block;
+  }
+  
+  .auth-only__field {
+    margin-bottom: 22px;
+  }
+  
+  .auth-only__label {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .auth-only__input {
+    width: 100%;
+    height: 40px;
+    border: 2px solid #222;
+    border-radius: 0;
+    padding: 8px 10px;
+    font-size: 16px;
+    outline: none;
+  }
+  
+  .auth-only__submit {
+    width: 100%;
+    height: 56px;
+    margin-top: 60px;
+    background: #000;
+    color: #fff;
+    border: none;
+    font-size: 18px;
+    letter-spacing: 6px;
+    cursor: pointer;
+  }
+
+  .auth-only__input,
+  .auth-only__submit {
+    box-sizing: border-box;
+    display: block;
+  }
+
+  .auth-only__links {
+    margin-top: 16px;
+    text-align: center;
+  }
+  
+  .auth-only__links a {
+    color: #000;
+    text-decoration: underline;
+  }

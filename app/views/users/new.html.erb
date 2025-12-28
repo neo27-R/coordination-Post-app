@@ -1,0 +1,31 @@
+<div class="auth-only">
+  <h1 class="auth-only__title">新規登録</h1>
+
+  <%= form_with model: @user, class: "auth-only__form" do |f| %>
+    <div class="auth-only__field">
+      <%= f.label :name, "ユーザー名", class: "auth-only__label" %>
+      <%= f.text_field :name, class: "auth-only__input" %>
+    </div>
+
+    <div class="auth-only__field">
+      <%= f.label :email, "メールアドレス", class: "auth-only__label" %>
+      <%= f.email_field :email, class: "auth-only__input" %>
+    </div>
+
+    <div class="auth-only__field">
+      <%= f.label :password, "パスワード", class: "auth-only__label" %>
+      <%= f.password_field :password, class: "auth-only__input" %>
+    </div>
+
+    <div class="auth-only__field">
+      <%= f.label :password_confirmation, "パスワード（確認）", class: "auth-only__label" %>
+      <%= f.password_field :password_confirmation, class: "auth-only__input" %>
+    </div>
+
+    <%= f.submit "登 録", class: "auth-only__submit" %>
+
+    <div class="auth-only__links">
+      <%= link_to "ログインはこちら", main_app.login_path, class: "auth-only__link-btn" %>
+    </div>
+  <% end %>
+</div>
