@@ -5,6 +5,7 @@
     <%= render "detail", event: @event %>
   </div>
 
+  <!-- 編集/削除（主催者だけ） -->
   <div class="event-show__actions">
     <% if logged_in? && @event.user_id == current_user.id %>
       <%= link_to "編集", edit_event_path(@event), class: "event-show__btn event-show__btn--primary" %>
@@ -15,7 +16,35 @@
             form: { data: { turbo_confirm: "本当に削除しますか？" } },
             class: "event-show__btn event-show__btn--danger" %>
     <% end %>
+  </div>
 
-    <%= link_to "一覧に戻る", events_path, class: "event-show__back" %>
+  <!-- 参加CTA（ログインしていれば表示） -->
+  <% if logged_in? %>
+    <div class="event-cta-wrapper">
+      <% if @event.user_id == current_user.id %>
+        <div class="event-cta__btn event-cta__btn--cancel event-cta__btn--static">
+        参加済み
+        </div>
+      <% elsif current_user.participating_events.exists?(@event.id) %>
+        <%= button_to "参加済み（取消）",
+              event_participation_path(@event),
+              method: :delete,
+              class: "event-cta__btn event-cta__btn--cancel" %>
+      <% else %>
+        <%= button_to "このイベントに参加する",
+              event_participation_path(@event),
+              method: :post,
+              class: "event-cta__btn" %>
+      <% end %>
+
+      <p class="event-cta__note">
+        イベントに参加すると参加者のコーディネートが閲覧できます
+      </p>
+    </div>
+  <% end %>
+
+  <!-- 一覧に戻る（いちばん下） -->
+  <div class="event-footer">
+    <%= link_to "一覧に戻る", events_path, class: "event-back-link" %>
   </div>
 </div>

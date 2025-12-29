@@ -1,0 +1,50 @@
+.event-cta {
+    margin-top: 18px;
+    padding: 0 18px;
+  }
+  
+  .event-cta__btn {
+    width: 100%;
+    height: 56px;
+    background: #2563eb;
+    color: #fff;
+    border: none;
+    border-radius: 0; 
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    cursor: pointer;
+    display: flex;            /* button_to は button なので中央寄せに */
+    align-items: center;
+    justify-content: center;
+  }
+
+  .event-cta__btn--cancel {
+    background: #fff;
+    color: #dc2626;
+    border: 2px solid #dc2626;
+  }
+  
+  .event-cta__btn--static {
+    cursor: default;
+    pointer-events: none;
+  }
+  
+  .event-cta__note {
+    margin: 10px 0 0;
+    font-size: 16px;
+    color: #000;
+    line-height: 1.6;
+  }
+
+  .event-footer {
+  padding: 0 18px;     /* ← CTAと同じ左揃えに */
+  margin: 48px 0 24px; /* ← 下に落とす */
+  text-align: center;
+}
+
+.event-back-link {
+  color: #000;
+  text-decoration: underline;
+  font-size: 14px;
+}
