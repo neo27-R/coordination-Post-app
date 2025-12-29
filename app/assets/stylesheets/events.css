@@ -207,3 +207,63 @@
       width: 100%;
     }
   }
+
+  /* =========================
+   イベント詳細（show）の下部アクション
+   ========================= */
+   .event-show__actions {
+    width: 100%;
+    max-width: 560px; /* event-new__card と同じ幅に揃える */
+    margin-top: 16px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  
+  .event-show__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 44px;
+    padding: 0 16px;
+    border: 1px solid #111;
+    background: #fff;
+    color: #111;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .event-show__btn--primary {
+    background: #111;
+    color: #fff;
+  }
+  
+  .event-show__btn--danger {
+    border-color: #b00020;
+    color: #b00020;
+    background: #fff;
+  }
+  
+  .event-show__back {
+    margin-left: auto;
+    color: #111;
+    text-decoration: underline;
+  }
+  
+  /* スマホ */
+  @media (max-width: 768px) {
+    .event-show__actions {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  
+    .event-show__btn {
+      width: 100%;
+    }
+  
+    .event-show__back {
+      margin-left: 0;
+      text-align: center;
+    }
+  }

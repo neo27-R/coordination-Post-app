@@ -1,0 +1,21 @@
+<div class="event-new">
+  <h1 class="event-new__title">イベント詳細</h1>
+
+  <div class="event-new__card">
+    <%= render "detail", event: @event %>
+  </div>
+
+  <div class="event-show__actions">
+    <% if logged_in? && @event.user_id == current_user.id %>
+      <%= link_to "編集", edit_event_path(@event), class: "event-show__btn event-show__btn--primary" %>
+
+      <%= button_to "削除",
+            event_path(@event),
+            method: :delete,
+            form: { data: { turbo_confirm: "本当に削除しますか？" } },
+            class: "event-show__btn event-show__btn--danger" %>
+    <% end %>
+
+    <%= link_to "一覧に戻る", events_path, class: "event-show__back" %>
+  </div>
+</div>
