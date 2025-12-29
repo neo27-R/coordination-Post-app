@@ -212,6 +212,7 @@
    イベント詳細（show）の下部アクション
    ========================= */
    .event-show__actions {
+    margin-bottom: 32px;
     width: 100%;
     max-width: 560px; /* event-new__card と同じ幅に揃える */
     margin-top: 16px;

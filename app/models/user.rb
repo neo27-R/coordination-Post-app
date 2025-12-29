@@ -1,5 +1,7 @@
 class User < ApplicationRecord
   has_many :events, dependent: :destroy
+  has_many :event_participations, dependent: :destroy
+  has_many :participating_events, through: :event_participations, source: :event
 
   authenticates_with_sorcery!
 
