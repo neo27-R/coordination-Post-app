@@ -1,0 +1,20 @@
+<div class="event-detail">
+  <div class="event-form__field">
+    <div class="event-form__label">タイトル</div>
+    <div class="event-form__input event-form__input--static"><%= event.title %></div>
+  </div>
+
+  <div class="event-form__field">
+    <div class="event-form__label">開催日</div>
+    <div class="event-form__input event-form__input--static">
+      <%= l(event.start_at.to_date) if event.start_at.present? %>
+    </div>
+  </div>
+
+  <div class="event-form__field">
+    <div class="event-form__label">内容</div>
+    <div class="event-form__textarea event-form__textarea--static">
+      <%= simple_format(event.body) %>
+    </div>
+  </div>
+</div>
