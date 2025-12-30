@@ -4,7 +4,7 @@
 
     <nav class="site-header__nav">
       <% if logged_in? %>
-        <%= link_to "イベント一覧", events_path, class: "site-header__link" %>
+        <%= link_to "イベント投稿一覧", events_path, class: "site-header__link" %>
         <%= button_to "ログアウト", logout_path, method: :delete, class: "site-header__link site-header__btn" %>
       <% end %>
     </nav>

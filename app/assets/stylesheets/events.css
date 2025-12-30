@@ -9,7 +9,7 @@
   }
   
   .events-index__title {
-    margin: 0;
+    margin-bottom: 24px;
     text-align: center;
     font-size: 44px;
     font-weight: 700;
