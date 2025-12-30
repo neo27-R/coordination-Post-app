@@ -1,4 +1,21 @@
 ja:
+  date:
+    formats:
+      default: "%Y年%m月%d日"
+
   time:
     formats:
       long: "%Y年%m月%d日 "
+
+  errors:
+    messages:
+      blank: "を入力してください"
+
+  activerecord:
+    models:
+      event: イベント
+    attributes:
+      event:
+        title: タイトル
+        start_at: 開催日
+        body: 内容

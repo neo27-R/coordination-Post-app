@@ -4,11 +4,7 @@
 
     <div class="events-index__actions">
       <%= link_to "イベント作成", new_event_path, class: "events-index__btn events-index__btn--primary" %>
-
-      <%# 「イベント参加」用のURLがまだなら一旦 # にしてOK %>
-      <%= link_to "イベント参加", "#", class: "events-index__btn events-index__btn--secondary" %>
     </div>
-  </div>
 
   <div class="events-grid">
     <% if @events.present? %>

@@ -6,7 +6,9 @@
   <div class="event-card__body">
     <div class="event-card__content">
       <p class="event-card__title">
-        <%= link_to event.title, event_path(event), class: "events-index__event-title" %>
+        <%= link_to (event.title.presence || "（タイトル未設定）"),
+          event_path(event),
+          class: "events-index__event-title" %>
       </p>
 
       <% if event.start_at.present? %>
