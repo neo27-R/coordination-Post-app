@@ -1,0 +1,15 @@
+<div class="event-joined">
+  <h1 class="event-joined__title">イベントに参加しました！</h1>
+
+  <div class="event-joined__card">
+    <p class="event-joined__text">
+      参加表明ありがとうございます。<br>
+      参加者のコーディネート一覧から、みんなの投稿を見ることができます。
+    </p>
+
+    <div class="event-joined__actions">
+      <%= link_to "参加者のコーディネート一覧", participant_posts_event_path(@event), class: "event-joined__btn" %>
+      <%= link_to "イベント詳細へ戻る", event_path(@event), class: "event-joined__link" %>
+    </div>
+  </div>
+</div>

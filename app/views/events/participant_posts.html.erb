@@ -1,0 +1,26 @@
+<div class="posts-index">
+  <h1 class="posts-index__title">参加者のコーディネート一覧</h1>
+
+  <div class="posts-index__actions">
+    <%= link_to "コーディネートを投稿する", new_event_post_path(@event), class: "posts-index__btn" %>
+    <%= link_to "イベント詳細へ戻る", event_path(@event), class: "posts-index__link" %>
+  </div>
+
+  <% if @posts.present? %>
+    <div class="posts-index__grid">
+      <% @posts.each do |post| %>
+        <div class="post-card">
+          <% if post.image.attached? %>
+            <%= image_tag post.image, class: "post-card__img" %>
+          <% end %>
+          <div class="post-card__meta">
+            <div class="post-card__name"><%= post.user.name %></div>
+            <div class="post-card__text"><%= simple_format(post.body) %></div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% else %>
+    <p>まだ投稿がありません</p>
+  <% end %>
+</div>
