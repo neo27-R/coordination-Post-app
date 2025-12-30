@@ -18,32 +18,42 @@
     <% end %>
   </div>
 
-  <!-- 参加CTA（ログインしていれば表示） -->
+  <!-- 参加（ログインしていれば表示） -->
   <% if logged_in? %>
-    <div class="event-cta-wrapper">
-      <% if @event.user_id == current_user.id %>
-        <div class="event-cta__btn event-cta__btn--cancel event-cta__btn--static">
-        参加済み
-        </div>
-      <% elsif current_user.participating_events.exists?(@event.id) %>
-        <%= button_to "参加済み（取消）",
-              event_participation_path(@event),
-              method: :delete,
-              class: "event-cta__btn event-cta__btn--cancel" %>
-      <% else %>
-        <%= button_to "このイベントに参加する",
-              event_participation_path(@event),
-              method: :post,
-              class: "event-cta__btn" %>
-      <% end %>
+  <div class="event-cta-wrapper">
+    <% if @event.user_id == current_user.id %>
+      <%= link_to "参加者のコーディネート一覧",
+            participant_posts_event_path(@event),
+            class: "event-cta__btn" %>
 
-      <p class="event-cta__note">
-        イベントに参加すると参加者のコーディネートが閲覧できます。
-      </p>
-    </div>
-  <% end %>
+      <div class="event-cta__btn event-cta__btn--cancel event-cta__btn--static">
+        主催者
+      </div>
 
-  <!-- 一覧に戻る（いちばん下） -->
+    <% elsif current_user.participating_events.exists?(@event.id) %>
+      <%= link_to "参加者のコーディネート一覧",
+            participant_posts_event_path(@event),
+            class: "event-cta__btn" %>
+
+      <%= button_to "参加済み（取消）",
+            event_participation_path(@event),
+            method: :delete,
+            class: "event-cta__btn event-cta__btn--cancel" %>
+
+    <% else %>
+      <%= button_to "このイベントに参加する",
+            event_participation_path(@event),
+            method: :post,
+            class: "event-cta__btn" %>
+    <% end %>
+
+    <p class="event-cta__note">
+      イベントに参加すると、みんなのコーディネートを見ることができます。
+    </p>
+  </div>
+<% end %>
+
+  <!-- 一覧に戻る -->
   <div class="event-footer">
     <%= link_to "一覧に戻る", events_path, class: "event-back-link" %>
   </div>

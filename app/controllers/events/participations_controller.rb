@@ -4,7 +4,7 @@ class Events::ParticipationsController < ApplicationController
 
   def create
     current_user.event_participations.find_or_create_by!(event: @event)
-    redirect_to @event, notice: "イベントに参加しました"
+    redirect_to joined_event_path(@event), notice: "イベントに参加しました"
   end
 
   def destroy

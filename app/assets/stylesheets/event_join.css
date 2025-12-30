@@ -1,35 +1,46 @@
-.event-cta {
-    margin-top: 18px;
-    padding: 0 18px;
-  }
-  
-  .event-cta__btn {
-    width: 100%;
-    height: 56px;
-    background: #2563eb;
-    color: #fff;
-    border: none;
-    border-radius: 0; 
-    font-size: 18px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    cursor: pointer;
-    display: flex;            /* button_to は button なので中央寄せに */
-    align-items: center;
-    justify-content: center;
-  }
+  /* CTA wrapper（ボタンを縦に並べる） */
+.event-cta-wrapper {
+  margin-top: 18px;
+  padding: 0 18px;
 
-  .event-cta__btn--cancel {
-    background: #fff;
-    color: #dc2626;
-    border: 2px solid #dc2626;
-  }
-  
-  .event-cta__btn--static {
-    cursor: default;
-    pointer-events: none;
-  }
-  
+  display: grid;
+  gap: 12px;
+}
+
+/* 共通ボタン */
+.event-cta__btn {
+  width: 100%;
+  height: 56px;
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 14px; /* ← スクショ寄せで角丸 */
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-decoration: none; /* link_to 対策 */
+}
+
+/* 取消ボタン */
+.event-cta__btn--cancel {
+  background: #fff;
+  color: #dc2626;
+  border: 2px solid #dc2626;
+}
+
+/* 主催者・参加済み表示（押せない） */
+.event-cta__btn--static {
+  background: #f3f4f6;
+  color: #6b7280;
+  border: 2px solid #d1d5db;
+  cursor: default;
+}
   .event-cta__note {
     margin: 10px 0 0;
     font-size: 16px;

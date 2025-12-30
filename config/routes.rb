@@ -13,6 +13,13 @@ Rails.application.routes.draw do
     resource :participation,
              only: %i[create destroy],
              module: :events
+
+    member do
+      get :joined
+      get :participant_posts
+    end
+
+    resources :posts, only: %i[new create]
   end
 
   get "up" => "rails/health#show", as: :rails_health_check
