@@ -1,0 +1,18 @@
+<%= form_with model: [@event, @post], local: true, class: "post-form" do |f| %>
+
+    <div class="post-form__field">
+      <%= f.label :image, "写真", class: "post-form__label" %>
+      <%= f.file_field :image, accept: "image/*", class: "post-form__file" %>
+    </div>
+  
+    <div class="post-form__field">
+      <%= f.label :body, "本文", class: "post-form__label" %>
+      <%= f.text_area :body, rows: 6, class: "post-form__textarea" %>
+    </div>
+  
+    <div class="post-form__actions">
+      <%= f.submit submit_label, class: "post-form__submit" %>
+    </div>
+  
+  <% end %>
+  
