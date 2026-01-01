@@ -19,7 +19,7 @@ Rails.application.routes.draw do
       get :participant_posts
     end
 
-    resources :posts, only: %i[new create]
+    resources :posts, only: %i[new create edit update destroy]
   end
 
   get "up" => "rails/health#show", as: :rails_health_check
