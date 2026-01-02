@@ -59,3 +59,4 @@ group :test do
 end
 
 gem "sorcery", "~> 0.17.0"
+gem "aws-sdk-s3", require: false
