@@ -18,16 +18,22 @@
   </head>
 
   <body>
-    <% unless %w[home user_sessions users].include?(controller_name) %>
-      <%= render "shared/header" %>
-    <% end %>
+  <% unless %w[home user_sessions users].include?(controller_name) %>
+    <%= render "shared/header" %>
+  <% end %>
 
-    <main class="site-main">
-      <%= yield %>
-    </main>
+  <% flash.each do |type, message| %>
+    <div class="flash flash--<%= type %>">
+      <%= message %>
+    </div>
+  <% end %>
 
-    <% unless %w[home user_sessions users].include?(controller_name) %>
-      <%= render "shared/footer" %>
-    <% end %>
-  </body>
+  <main class="site-main">
+    <%= yield %>
+  </main>
+
+  <% unless %w[home user_sessions users].include?(controller_name) %>
+    <%= render "shared/footer" %>
+  <% end %>
+</body>
 </html>
