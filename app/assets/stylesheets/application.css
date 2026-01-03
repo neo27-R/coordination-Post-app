@@ -164,3 +164,17 @@ body {
     color: #355F54;
     cursor: pointer;
   }
+
+  .flash {
+    max-width: 980px;
+    margin: 12px auto;
+    padding: 12px 14px;
+    border-radius: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+  
+  .flash--notice { background: #e8f5e9; border: 1px solid #66bb6a; }
+  .flash--success { background: #e3f2fd; border: 1px solid #64b5f6; }
+  .flash--alert { background: #fff3e0; border: 1px solid #ffb74d; }
+  .flash--error { background: #ffebee; border: 1px solid #e57373; }

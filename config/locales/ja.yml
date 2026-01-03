@@ -10,12 +10,17 @@ ja:
   errors:
     messages:
       blank: "を入力してください"
+      confirmation: "と一致しません"   # ← ★これを追加
 
   activerecord:
     models:
       event: イベント
+      user: ユーザー               # ←（任意だけどおすすめ）
     attributes:
       event:
         title: タイトル
         start_at: 開催日
         body: 内容
+      user:
+        password: パスワード
+        password_confirmation: パスワード（確認）
