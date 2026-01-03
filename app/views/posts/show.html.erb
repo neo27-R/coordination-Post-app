@@ -1,0 +1,41 @@
+<div class="posts-show">
+  <div class="posts-show__header">
+    <h1 class="posts-show__title">コーディネート詳細</h1>
+
+    <div class="posts-show__nav">
+      <%= link_to "一覧に戻る", participant_posts_event_path(@event), class: "posts-show__back" %>
+      <%= link_to "イベント詳細へ戻る", event_path(@event), class: "posts-show__back" %>
+    </div>
+  </div>
+
+  <div class="post-card post-card--show">
+    <% if @post.image.attached? %>
+      <div class="post-card__img-wrap">
+        <%= image_tag @post.image, class: "post-card__img" %>
+      </div>
+    <% end %>
+
+    <div class="post-card__meta">
+      <div class="post-card__name">
+        <%= @post.user.name %>
+      </div>
+
+      <div class="post-card__text">
+        <%= simple_format(@post.body) %>
+      </div>
+
+      <% if @post.user_id == current_user.id %>
+        <div class="post-card__actions">
+          <%= link_to "編集", edit_event_post_path(@event, @post), class: "post-card__action" %>
+
+          <%= button_to "削除",
+                event_post_path(@event, @post),
+                method: :delete,
+                data: { turbo_confirm: "この投稿を削除しますか？" },
+                class: "post-card__action post-card__action--danger",
+                form: { class: "post-card__action-form" } %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

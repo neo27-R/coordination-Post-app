@@ -14,7 +14,9 @@
             <%= image_tag post.image, class: "post-card__img" %>
           <% end %>
             <div class="post-card__meta">
-              <div class="post-card__name"><%= post.user.name %></div>
+              <div class="post-card__name">
+                <%= link_to post.user.name, event_post_path(@event, post), class: "post-card__name-link" %>
+              </div>
               <div class="post-card__text"><%= simple_format(post.body) %></div>
 
                 <% if post.user_id == current_user.id %>

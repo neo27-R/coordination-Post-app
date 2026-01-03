@@ -57,3 +57,57 @@
     border: none;
     cursor: pointer;
   }
+
+  .post-card__name-link {
+    color: inherit;               /* 青を消す（親の文字色にする） */
+    text-decoration: underline;   /* 下線だけ残す */
+  }
+  
+  .post-card__name-link:hover {
+    opacity: 0.7;                 /* 任意：ホバーで少し反応 */
+  }
+
+  /* =========================
+   post show (詳細)
+   ========================= */
+.posts-show {
+  padding: 28px 24px 56px;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.posts-show__header {
+  margin-bottom: 18px;
+}
+
+.posts-show__title {
+  margin: 0 0 10px;
+  text-align: center;
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.posts-show__nav {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.posts-show__back {
+  color: inherit;
+  text-decoration: underline;
+}
+
+/* 画像の見た目を安定させる（既にあれば不要） */
+.post-card__img-wrap {
+  overflow: hidden;
+  border-radius: 14px;
+}
+
+.post-card--show .post-card__img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
