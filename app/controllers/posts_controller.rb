@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   before_action :set_event
   before_action :ensure_participant!
 
-  before_action :set_post, only: %i[edit update destroy]
+  before_action :set_post, only: %i[show edit update destroy]
   before_action :authorize_post!, only: %i[edit update destroy]
 
   def new
@@ -17,6 +17,9 @@ class PostsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def show
   end
 
   def edit
