@@ -58,5 +58,5 @@ group :test do
   gem "minitest", "< 6"
 end
 
-gem "sorcery", "~> 0.17.0"
+gem "sorcery", "~> 0.18.0"
 gem "aws-sdk-s3", require: false
